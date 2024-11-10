@@ -14,6 +14,10 @@ package copyfile;
  * @author fatbo
  */
 import java.io.*;
+import java.util.Date;
+import java.util.Timer;
+import java.util.TimerTask;
+
 
 public class Main {
     
@@ -30,12 +34,14 @@ public class Main {
         File fname1 = new File("C:\\temp2\\Deleteme.jpg");
         File fname2 = new File("C:\\temp2\\Test2\\Deleteme.jpg");
         
+        System.out.println("Timer task started at:"+new Date());
         try {
             copyFileUsingStream(fname1, fname2);
         } catch (IOException e) {
       System.out.println("An error occurred.");
       e.printStackTrace();
-        }
+        };
+        System.out.println("Timer task finished at:"+new Date());
     }
     private static void copyFileUsingStream(File source, File dest) throws IOException {
     InputStream is = null;
